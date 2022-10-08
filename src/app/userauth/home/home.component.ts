@@ -16,4 +16,5 @@ export class HomeComponent implements OnInit {
      
     type === 'add' ? this.count++ : this.count--;
   }
+  school = "DDKKHA";
 }
