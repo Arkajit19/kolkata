@@ -6,6 +6,14 @@
    <h1 class="kot">{{school}}</h1>
 <br><br>
    <h2 class="kot">The World</h2>
+
+   <h1 *ngIf="college=='MSIT'; then emptbuck else fullbuck"></h1>
+   <ng-template #emptbuck>
+      <h1>This is MSIT</h1>
+   </ng-template>
+   <ng-template #fullbuck>
+      <h1>This is not MSIT</h1>
+   </ng-template>
    
 
 
