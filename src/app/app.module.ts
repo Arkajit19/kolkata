@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {UserauthModule} from './userauth/userauth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HamiPipe } from './mypipes/hami.pipe';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HamiPipe
   ],
   imports: [
     BrowserModule,

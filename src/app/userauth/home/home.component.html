@@ -1,19 +1,67 @@
-<p>home works!</p><br><br>
+<!-- <p>home works!</p><br><br>
 
    <button mat-flat-button color="primary" (click)="counter('minus')"><h1>- -</h1></button><br><br>
    <h1>noofcount : {{count}}</h1>
    <button mat-flat-button color="primary" (click)="counter('add')"><h1>+ +</h1></button><br><br>
    <h1 class="kot">{{school}}</h1>
 <br><br>
-   <h2 class="kot">The World</h2>
+   <h2 class="kot">The World</h2> -->
 
-   <h1 *ngIf="college=='MSIT'; then emptbuck else fullbuck"></h1>
+   <!-- <h1 *ngIf="college=='MSIT'; then emptbuck else fullbuck"></h1>
    <ng-template #emptbuck>
       <h1>This is MSIT</h1>
    </ng-template>
    <ng-template #fullbuck>
       <h1>This is not MSIT</h1>
    </ng-template>
+   <ng-template [ngIf]="color==='Red'">
+      <h1 style="color:red">This is Red</h1>
+   </ng-template>
+   <ng-template [ngIf]="color==='Green'">
+      <h1 style="color:green">This is Green</h1>
+   </ng-template>
+   <ng-template [ngIf]="color==='Blue'">
+      <h1 style="color:blue">This is Blue</h1>
+   </ng-template> -->
+   <!-- <div [ngSwitch]="color">
+      <h1 *ngSwitchCase="'Red'" style="color:red;">This is Red</h1>
+      <h1 *ngSwitchCase="'Green'" style="color:green;">This is Green</h1>
+      <h1 *ngSwitchCase="'Blue'" style="color:blue;">This is Blue</h1>
+      <h1 *ngSwitchCase="'Brown'" style="color:brown;">This is Brown</h1>
+      <h1 *ngSwitchDefault>Unknown Color</h1>
+   </div> -->
+   <!---<h2 *ngFor="let person of users" >Name is : {{person}}</h2>--->
+   <!-- <form #loginform="ngForm"(ngSubmit)=getvalue(loginform.value)>
+      <input type="text" name="fname" placeholder="Enter First Name" value="" ngModel>
+      <br><br>
+      <!-- <input type="password" name="psw" placeholder="Enter Password" value="" ngModel> -->
+      <!-- <input type="text" name="lname" placeholder="Enter Last Name" value="" ngModel>
+      <br><br>
+       <input type="text" name="loc" placeholder="Enter Location Name" value="" ngModel>
+       <br><br>
+      <button type="submit">Submit</button>
+   </form> -->
+   <!-- <br><br> --> -->
+   <form [formGroup]="regform" (ngSubmit)="Signupuser()">
+      <input type="text" name="pname" placeholder="Enter Person Name" formControlName="pname">
+      <br>
+      <span style="color:red;"*ngIf="pnamevalidator && pnamevalidator.invalid && pnamevalidator.touched">Please Enter name</span>
+      <br><br>
+       <input type="text" name="loc" placeholder="Enter Location Name" formControlName="loc">
+       <br>
+       <span style="color:red;"*ngIf="locvalidator && locvalidator.invalid && locvalidator.touched">Please Enter Location</span>
+       <br><br>
+         <input type="email" name="email" placeholder="Enter Email" formControlName="email">
+         <br>
+         <span style="color:red;"*ngIf="emailvalidator && emailvalidator.invalid && emailvalidator.touched ">Please Enter Valid Email</span>
+         <br><br>
+         <input type="password" name="psw" placeholder="Enter Password" formControlName="psw">
+         <br>
+          <span style="color:red;"*ngIf="pswvalidator && pswvalidator.invalid && pswvalidator.touched">Please Enter password with min 7 chars</span>
+         <br><br>
+      <button type="submit" [disabled]="regform.invalid">Submit</button>
+   </form>
+
    
 
 
