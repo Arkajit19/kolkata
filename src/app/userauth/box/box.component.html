@@ -1,22 +1,16 @@
 <p>box works!</p>
-<!-- <input type="radio" name="rb" (click)="Changecommand(true)" checked><h3>For Valid</h3><br>
-<br>
-<input type="radio" name="rb" (click)="Changecommand(false)"><h3>For invalid</h3>
-<div *ngIf="isValid">
-    <h1>This is valid</h1>
-</div>
-<div *ngIf="!isValid">
-<h1>This is invalid</h1>
-</div> -->
+
 <input type="radio" name="rb" (click)="Changecommand(true)" checked><h3>For Valid</h3><br>
 <br>
 <input type="radio" name="rb" (click)="Changecommand(false)"><h3>For invalid</h3>
 
-<div *ngIf="isValid else elsepart">
-    <h1>This is valid </h1>
+<div *ngIf="isValid then thenpart else elsepart">   
 </div>
+<ng-template #thenpart>
+    <h1>This is valid in thenpart</h1>
+</ng-template>
 <ng-template #elsepart>
-    <h1>This is invalid</h1>
+    <h1>This is invalid in elsepart</h1>
 </ng-template>
 
 
